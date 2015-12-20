@@ -67,6 +67,7 @@ namespace Pracownicy.Finanse
         }
         #endregion
         #region metody
+/*
         public float operacjeLacznie()
         {
             float suma = 0;
@@ -75,6 +76,11 @@ namespace Pracownicy.Finanse
                 suma += operacja.kwota;
             }
             return suma;
+        }
+*/
+        public float operacjeLacznie() //wersja korzystajaca z jezyka LINQ
+        {
+            return operacje.Sum(operacja => operacja.kwota);
         }
 
         public float operacjeLacznie(DateTime dataOd, DateTime dataDo)
