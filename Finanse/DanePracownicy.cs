@@ -13,10 +13,10 @@ namespace Pracownicy.Finanse
 
     public class Pracownik
     {
-        //pola statyczne
+        #region  pola statyczne
         static float dodatekWakacyjny = 1000f;
-
-        //pola obiektowe
+        #endregion
+        #region pola obiektowe
         public uint ID; //0
         ulong pesel;
         public string imie; //""
@@ -25,35 +25,8 @@ namespace Pracownicy.Finanse
         public UmowaTyp umowa = UmowaTyp.Zlecenie;
         public Wynagrodzenie wynagrodzenie; //null
         public Operacja[] operacje = new Operacja[20]; //Zamienić na kolekcję
-
-        //akcesory
-        public float operacjeLacznie()
-        {
-            float suma = 0;
-            foreach (var operacja in this.operacje)
-            {
-                suma += operacja.kwota;
-            }
-            return suma;
-        }
-
-       public float operacjeLacznie(DateTime dataOd, DateTime dataDo)
-        {
-            float suma = 0;
-            foreach (var operacja in this.operacje)
-            {
-                if (operacja.data > dataOd && operacja.data < dataDo)
-                {
-                    suma += operacja.kwota;
-                }
-            }
-            return suma;
-
-        }
-     
-
-
-
+        #endregion
+        #region akcesory
         public ulong pobierzPesel() //get
         {
             return pesel;
@@ -92,10 +65,37 @@ namespace Pracownicy.Finanse
         {
             return nazwisko;
         }
+        #endregion
+        #region metody
+        public float operacjeLacznie()
+        {
+            float suma = 0;
+            foreach (var operacja in this.operacje)
+            {
+                suma += operacja.kwota;
+            }
+            return suma;
+        }
+
+        public float operacjeLacznie(DateTime dataOd, DateTime dataDo)
+        {
+            float suma = 0;
+            foreach (var operacja in this.operacje)
+            {
+                if (operacja.data > dataOd && operacja.data < dataDo)
+                {
+                    suma += operacja.kwota;
+                }
+            }
+            return suma;
+
+        }
+        #endregion
     }
+}
 
     public enum UmowaTyp
     {
         OPrace, Dzieło, Zlecenie, Kontrakt //
     }
-}
+    
