@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pracownicy.Finanse.Operacja">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAQAAAAAAAAAAAAAAAQAEAAAAA=</HashCode>
+      <FileName>FinansePracownicy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pracownicy.Finanse.Osoba">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DanePracownicy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pracownicy.Finanse.Pracownik">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAQAIAAAAAAwBCAAAAAAAAAAAAAAEAAAAAAAACAAAA=</HashCode>
+      <FileName>DanePracownicy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Struct Name="Pracownicy.Finanse.Wynagrodzenie">
+    <Position X="4.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAIAAAAAAAAAAgAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>FinansePracownicy.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Enum Name="Pracownicy.Finanse.UmowaTyp">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAACAAAAAAAAAAAAAAAABAAIAAAAAAA=</HashCode>
+      <FileName>DanePracownicy.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
