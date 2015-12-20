@@ -19,12 +19,32 @@ namespace Pracownicy.Finanse
         #region pola obiektowe
         public uint ID; //0
         ulong pesel;
-        public string imie; //""
+        string imie; //""
         string nazwisko;
         DateTime dataUrodzenia;
         public UmowaTyp umowa = UmowaTyp.Zlecenie;
         public Wynagrodzenie wynagrodzenie; //null
         public Operacja[] operacje = new Operacja[20]; //Zamienić na kolekcję
+        #endregion
+        #region wlasciwosci
+        public string Imie
+        {
+            get
+            {
+                return imie;
+            }
+
+            set
+            {
+                if (value.Length>1) imie = value;
+
+                else throw new PracownikException()
+                {
+                    danePracownik = this.imie + " " + this.nazwisko,
+                    komunikat = "IMIE musi miec minimum 2 znaki"
+                };
+            }
+        }
         #endregion
         #region akcesory
         public ulong pobierzPesel() //get
@@ -66,18 +86,19 @@ namespace Pracownicy.Finanse
             return nazwisko;
         }
         #endregion
+
         #region metody
-/*
-        public float operacjeLacznie()
-        {
-            float suma = 0;
-            foreach (var operacja in this.operacje)
-            {
-                suma += operacja.kwota;
-            }
-            return suma;
-        }
-*/
+        /*
+                public float operacjeLacznie()
+                {
+                    float suma = 0;
+                    foreach (var operacja in this.operacje)
+                    {
+                        suma += operacja.kwota;
+                    }
+                    return suma;
+                }
+        */
         public float operacjeLacznie() //wersja korzystajaca z jezyka LINQ
         {
             return operacje.Sum(operacja => operacja.kwota);

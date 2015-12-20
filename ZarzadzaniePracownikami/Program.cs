@@ -17,7 +17,7 @@ namespace ZarzadzaniePracownikami
             Pracownik[] pracownicy = new Pracownik[2];
             Pracownik p1 = new Pracownik();
             p1.ID = 10;
-            p1.imie = "Beata";
+            p1.Imie = "Beata";
             p1.ustawNazwisko("Tępa");
             p1.ustawPesel(12345612345);
             p1.umowa = UmowaTyp.Dzieło;
@@ -45,7 +45,7 @@ namespace ZarzadzaniePracownikami
             var p2 = new Pracownik()
             {
                 ID = 2222,
-                imie = "jan",
+                Imie = "jan",
                 umowa = UmowaTyp.Dzieło,
                 wynagrodzenie = new Wynagrodzenie()
                 {
@@ -66,7 +66,7 @@ namespace ZarzadzaniePracownikami
 
             foreach (var pracownik in pracownicy)
             {
-                Console.WriteLine(pracownik.pobierzPesel().ToString() + " : " + pracownik.imie + " " + pracownik.pobierzNazwisko() + " " + pracownik.wynagrodzenie.wygrodzenieLaczne().ToString("N")+" "+pracownik.wynagrodzenie.waluta);
+                Console.WriteLine(pracownik.pobierzPesel().ToString() + " : " + pracownik.Imie + " " + pracownik.pobierzNazwisko() + " " + pracownik.wynagrodzenie.wygrodzenieLaczne().ToString("N")+" "+pracownik.wynagrodzenie.waluta);
                 Console.WriteLine("Operacje lacznie: " + pracownik.operacjeLacznie().ToString("N"));
                 Console.WriteLine("Operacje od do :" + pracownik.operacjeLacznie(new DateTime(2010, 03, 01), new DateTime(2015, 03, 01)));
                 foreach (var operacja in pracownik.operacje)
