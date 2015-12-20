@@ -19,7 +19,7 @@ namespace ZarzadzaniePracownikami
             p1.ID = 10;
             p1.imie = "Beata";
             p1.nazwisko = "Tępa";
-            p1.ustawPesel(111111111);
+            p1.ustawPesel(12345612345);
             p1.umowa = UmowaTyp.Dzieło;
             p1.wynagrodzenie = new Wynagrodzenie();
             p1.wynagrodzenie.pensjaPodstawowa = 10000f;
@@ -65,7 +65,7 @@ namespace ZarzadzaniePracownikami
 
             foreach (var pracownik in pracownicy)
             {
-                Console.WriteLine(pracownik.pobierzPesel().ToString() + " : " + pracownik.imie + " " + pracownik.nazwisko);
+                Console.WriteLine(pracownik.pobierzPesel().ToString() + " : " + pracownik.imie + " " + pracownik.nazwisko + " " + pracownik.wynagrodzenie.wygrodzenieLaczne().ToString("C"));
 
                 foreach (var operacja in pracownik.operacje)
                 {

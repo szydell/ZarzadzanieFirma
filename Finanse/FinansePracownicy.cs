@@ -19,5 +19,10 @@ namespace Pracownicy.Finanse
         public float pensjaPodstawowa;
         public string waluta;
         public float premia;
+
+        public float wygrodzenieLaczne()
+        {
+            return pensjaPodstawowa + premia;
+        }
     }
 }
