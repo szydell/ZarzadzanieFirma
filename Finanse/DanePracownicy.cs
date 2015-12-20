@@ -20,7 +20,7 @@ namespace Pracownicy.Finanse
         public uint ID; //0
         ulong pesel;
         public string imie; //""
-        public string nazwisko;
+        string nazwisko;
         DateTime dataUrodzenia;
         public UmowaTyp umowa = UmowaTyp.Zlecenie;
         public Wynagrodzenie wynagrodzenie; //null
@@ -45,6 +45,25 @@ namespace Pracownicy.Finanse
                     komunikat = "PESEL musi miec 11 znakow"
                 };
             }
+        }
+        public void ustawNazwisko(string nazwisko)
+        {
+            if (nazwisko.Length > 1)
+            {
+                this.nazwisko = nazwisko;
+            }
+            else
+            {
+                throw new PracownikException()
+                {
+                    danePracownik = this.imie + " " + this.nazwisko,
+                    komunikat = "NAZWISKO musi miec wiecej conajmniej dwa znaki"
+                };
+            }
+        }
+        public string pobierzNazwisko()
+        {
+            return nazwisko;
         }
     }
 
