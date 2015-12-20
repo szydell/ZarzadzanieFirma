@@ -8,7 +8,7 @@ namespace Pracownicy.Finanse
 {
     public class Operacja
     {        
-        DateTime data;
+        public DateTime data;
         public float kwota;
         public string tytul;
         public bool wykonanie; //= false;

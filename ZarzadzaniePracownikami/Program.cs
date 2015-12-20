@@ -28,11 +28,13 @@ namespace ZarzadzaniePracownikami
             p1.operacje = new Operacja[2];
 
             Operacja o1 = new Operacja();
+            o1.data = new DateTime(2011, 03, 01);
             o1.tytul = "Wypłata za knucie";
             o1.kwota = 3333f;
             o1.wykonanie = true;
 
             Operacja o2 = new Operacja();
+            o2.data = new DateTime(2009, 03, 01);
             o2.tytul = "Opieka nad kotem";
             o2.kwota = 4444f;
             o2.wykonanie = true;
@@ -65,7 +67,8 @@ namespace ZarzadzaniePracownikami
             foreach (var pracownik in pracownicy)
             {
                 Console.WriteLine(pracownik.pobierzPesel().ToString() + " : " + pracownik.imie + " " + pracownik.pobierzNazwisko() + " " + pracownik.wynagrodzenie.wygrodzenieLaczne().ToString("N")+" "+pracownik.wynagrodzenie.waluta);
-
+                Console.WriteLine("Operacje lacznie: " + pracownik.operacjeLacznie().ToString("N"));
+                Console.WriteLine("Operacje od do :" + pracownik.operacjeLacznie(new DateTime(2010, 03, 01), new DateTime(2015, 03, 01)));
                 foreach (var operacja in pracownik.operacje)
                 {
                     Console.WriteLine(operacja.tytul + ": " + operacja.kwota);
