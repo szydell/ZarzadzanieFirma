@@ -82,19 +82,24 @@ namespace Pracownicy.Finanse
         {
             return operacje.Sum(operacja => operacja.kwota);
         }
+        /*
+                public float operacjeLacznie(DateTime dataOd, DateTime dataDo)
+                {
+                    float suma = 0;
+                    foreach (var operacja in this.operacje)
+                    {
+                        if (operacja.data > dataOd && operacja.data < dataDo)
+                        {
+                            suma += operacja.kwota;
+                        }
+                    }
+                    return suma;
 
+                }
+        */
         public float operacjeLacznie(DateTime dataOd, DateTime dataDo)
         {
-            float suma = 0;
-            foreach (var operacja in this.operacje)
-            {
-                if (operacja.data > dataOd && operacja.data < dataDo)
-                {
-                    suma += operacja.kwota;
-                }
-            }
-            return suma;
-
+            return operacje.Where(oper => oper.data >= dataOd && oper.data <= dataDo).Sum(oper => oper.kwota);
         }
         #endregion
     }
