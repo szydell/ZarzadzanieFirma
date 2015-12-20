@@ -18,7 +18,7 @@ namespace Pracownicy.Finanse
 
         //pola obiektowe
         public uint ID; //0
-        public ulong pesel;
+        ulong pesel;
         public string imie; //""
         public string nazwisko;
         DateTime dataUrodzenia;
@@ -26,6 +26,26 @@ namespace Pracownicy.Finanse
         public Wynagrodzenie wynagrodzenie; //null
         public Operacja[] operacje = new Operacja[20]; //Zamienić na kolekcję
 
+        //akcesory
+        public ulong pobierzPesel() //get
+        {
+            return pesel;
+        }
+        public void ustawPesel(ulong pesel) //set
+        {
+            if (pesel > 10000000000 && pesel < 100000000000)
+            {
+                this.pesel = pesel;
+            }
+            else
+            {
+                throw new PracownikException()
+                {
+                    danePracownik = this.imie + " " + this.nazwisko,
+                    komunikat = "PESEL musi miec 11 znakow"
+                };
+            }
+        }
     }
 
     public enum UmowaTyp

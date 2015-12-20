@@ -12,12 +12,14 @@ namespace ZarzadzaniePracownikami
     {
         static void Main(string[] args)
         {
+            try
+            {
             Pracownik[] pracownicy = new Pracownik[2];
             Pracownik p1 = new Pracownik();
             p1.ID = 10;
             p1.imie = "Beata";
             p1.nazwisko = "Tępa";
-            p1.pesel = 111;
+            p1.ustawPesel(111111111);
             p1.umowa = UmowaTyp.Dzieło;
             p1.wynagrodzenie = new Wynagrodzenie();
             p1.wynagrodzenie.pensjaPodstawowa = 10000f;
@@ -43,7 +45,6 @@ namespace ZarzadzaniePracownikami
                 ID = 2222,
                 imie = "jan",
                 nazwisko = "lis",
-                pesel = 222,
                 umowa = UmowaTyp.Dzieło,
                 wynagrodzenie = new Wynagrodzenie()
                 {
@@ -57,20 +58,25 @@ namespace ZarzadzaniePracownikami
                     new Operacja() {kwota=33f,tytul="BBB",wykonanie=true}
                 }
             };
+            p2.ustawPesel(12345678901);
 
             pracownicy[0] = p1;
             pracownicy[1] = p2;
 
             foreach (var pracownik in pracownicy)
             {
-                Console.WriteLine(pracownik.imie + " " + pracownik.nazwisko);
+                Console.WriteLine(pracownik.pobierzPesel().ToString() + " : " + pracownik.imie + " " + pracownik.nazwisko);
 
                 foreach (var operacja in pracownik.operacje)
                 {
                     Console.WriteLine(operacja.tytul + ": " + operacja.kwota);
                 }
             }
-
+            }
+            catch(PracownikException ex)
+            {
+                Console.WriteLine(ex.komunikat+": "+ex.danePracownik);
+            }
             Console.ReadLine();
             //pracownicy[0] = 
         }
