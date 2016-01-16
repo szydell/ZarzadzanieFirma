@@ -12,6 +12,19 @@ namespace Pracownicy.Finanse
         public float kwota;
         public string tytul;
         public bool wykonanie; //= false;
+        #region konstruktory
+        public Operacja()
+        {
+
+        }
+        public Operacja(DateTime data, float kwota, string tytul, bool wykonanie)
+        {
+            this.data = data;
+            this.kwota = kwota;
+            this.tytul = tytul;
+            this.wykonanie = wykonanie;
+        }
+        #endregion
     }
 
     public struct Wynagrodzenie
