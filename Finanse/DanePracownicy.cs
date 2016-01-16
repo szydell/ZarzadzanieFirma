@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Pracownicy.Finanse
 {
-    public class Osoba
+    public abstract class Osoba
     {
         public uint ID; //0
         string imie; //""
