@@ -60,6 +60,12 @@ namespace Pracownicy.Finanse
             }
         }
         #endregion
+        #region metody
+        public virtual string dane()  //metoda do przysloniecia, w ramach przeciazenia polimorficznego
+        {
+            return imie + " " + nazwisko;
+        }
+        #endregion
 
     }
 
@@ -177,6 +183,10 @@ namespace Pracownicy.Finanse
         public float operacjeLacznie(DateTime dataOd, DateTime dataDo)
         {
             return operacje.Where(oper => oper.data >= dataOd && oper.data <= dataDo).Sum(oper => oper.kwota);
+        }
+        public override string dane()  //metoda przyslaniajaca, w ramach przeciazenia polimorficznego
+        {
+            return imie + " " + nazwisko;
         }
         #endregion
     }
