@@ -36,6 +36,7 @@ namespace Pracownicy.Finanse
 
             set
             {
+                /*
                 if (value.Length>1) imie = value;
 
                 else throw new PracownikException()
@@ -43,6 +44,23 @@ namespace Pracownicy.Finanse
                     danePracownik = this.imie + " " + this.nazwisko,
                     komunikat = "IMIE musi miec minimum 2 znaki"
                 };
+                */
+                var wr = new System.Text.RegularExpressions.Regex(@"\d");
+                if (wr.IsMatch(value))  throw new PracownikException()
+                    {
+                        danePracownik = value + " " + this.nazwisko,
+                        komunikat = "IMIE nie moze zawierac cyfry"
+                    };
+                
+                else
+                {
+                    imie = value;
+                };
+                
+                
+                
+
+
             }
         }
         #endregion

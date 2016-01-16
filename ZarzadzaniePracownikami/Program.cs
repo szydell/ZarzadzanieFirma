@@ -17,7 +17,7 @@ namespace ZarzadzaniePracownikami
             Pracownik[] pracownicy = new Pracownik[2];
             Pracownik p1 = new Pracownik();
             p1.ID = 10;
-            p1.Imie = "Beata";
+            p1.Imie = "Beata1";
             p1.ustawNazwisko("Tępa");
             p1.ustawPesel(12345612345);
             p1.umowa = UmowaTyp.Dzieło;
