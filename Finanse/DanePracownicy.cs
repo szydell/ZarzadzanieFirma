@@ -10,7 +10,7 @@ namespace Pracownicy.Finanse
     {
         public uint ID; //0
         string imie; //""
-        public string nazwisko;
+        protected string nazwisko;
         
         #region wlasciwosci
         public string Imie
