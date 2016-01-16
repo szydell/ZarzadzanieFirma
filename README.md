@@ -1,4 +1,3 @@
 # ZarzadzanieFirma
-WSB - programowanie obiektowe, cwiczenia
+WSB - programowanie obiektowe C#, cwiczenia
 
-Nie ma to nic ciekawego. Ot szybki projekt klepany na zajeciach.
