@@ -12,6 +12,10 @@ namespace Pracownicy.Finanse
         string imie; //""
         protected string nazwisko;
         #region konstruktory
+        public Osoba()
+        {
+            
+        }
         public Osoba(string imie, string nazwisko) //konstruktor z parametrami
         {
             this.Imie = imie;
