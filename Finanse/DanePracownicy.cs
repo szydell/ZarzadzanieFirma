@@ -8,10 +8,51 @@ namespace Pracownicy.Finanse
 {
     public class Osoba
     {
+        public uint ID; //0
+        string imie; //""
+        public string nazwisko;
+        
+        #region wlasciwosci
+        public string Imie
+        {
+            get
+            {
+                return imie;
+            }
 
+            set
+            {
+                /*
+                if (value.Length>1) imie = value;
+
+                else throw new PracownikException()
+                {
+                    danePracownik = this.imie + " " + this.nazwisko,
+                    komunikat = "IMIE musi miec minimum 2 znaki"
+                };
+                */
+                var wr = new System.Text.RegularExpressions.Regex(@"\d");
+                if (wr.IsMatch(value)) throw new PracownikException()
+                {
+                    danePracownik = value + " " + this.nazwisko,
+                    komunikat = "IMIE nie moze zawierac cyfry"
+                };
+
+                else
+                {
+                    imie = value;
+                };
+
+
+
+
+
+            }
+        }
+        #endregion
     }
 
-    public class Pracownik
+    public class Pracownik : Osoba
     {
         #region  pola statyczne
         static float dodatekWakacyjny = 1000f;
@@ -19,8 +60,6 @@ namespace Pracownicy.Finanse
         #region pola obiektowe
         public uint ID; //0
         ulong pesel;
-        string imie; //""
-        string nazwisko;
         DateTime dataUrodzenia;
         public UmowaTyp umowa = UmowaTyp.Zlecenie;
         public Wynagrodzenie wynagrodzenie; //null
@@ -51,42 +90,7 @@ namespace Pracownicy.Finanse
         }
         #endregion //destruktor
         #region wlasciwosci
-        public string Imie
-        {
-            get
-            {
-                return imie;
-            }
-
-            set
-            {
-                /*
-                if (value.Length>1) imie = value;
-
-                else throw new PracownikException()
-                {
-                    danePracownik = this.imie + " " + this.nazwisko,
-                    komunikat = "IMIE musi miec minimum 2 znaki"
-                };
-                */
-                var wr = new System.Text.RegularExpressions.Regex(@"\d");
-                if (wr.IsMatch(value))  throw new PracownikException()
-                    {
-                        danePracownik = value + " " + this.nazwisko,
-                        komunikat = "IMIE nie moze zawierac cyfry"
-                    };
-                
-                else
-                {
-                    imie = value;
-                };
-                
-                
-                
-
-
-            }
-        }
+        
         #endregion
         #region akcesory
         public ulong pobierzPesel() //get
@@ -103,7 +107,7 @@ namespace Pracownicy.Finanse
             {
                 throw new PracownikException()
                 {
-                    danePracownik = this.imie + " " + this.nazwisko,
+                    danePracownik = this.Imie + " " + this.nazwisko,
                     komunikat = "PESEL musi miec 11 znakow"
                 };
             }
@@ -118,7 +122,7 @@ namespace Pracownicy.Finanse
             {
                 throw new PracownikException()
                 {
-                    danePracownik = this.imie + " " + this.nazwisko,
+                    danePracownik = this.Imie + " " + this.nazwisko,
                     komunikat = "NAZWISKO musi miec wiecej conajmniej dwa znaki"
                 };
             }
