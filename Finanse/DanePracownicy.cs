@@ -42,8 +42,13 @@ namespace Pracownicy.Finanse
         {
             this.dataUrodzenia = dataUrodzenia;
         }
-
         #endregion
+        #region destruktor
+        ~Pracownik()
+        {
+            Console.WriteLine("Usunieto obiekt pracownika: " + this.GetHashCode());
+        }
+        #endregion //destruktor
         #region wlasciwosci
         public string Imie
         {
