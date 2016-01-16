@@ -47,6 +47,7 @@ namespace Pracownicy.Finanse
         ~Pracownik()
         {
             Console.WriteLine("Usunieto obiekt pracownika: " + this.GetHashCode());
+            Console.ReadLine();
         }
         #endregion //destruktor
         #region wlasciwosci
