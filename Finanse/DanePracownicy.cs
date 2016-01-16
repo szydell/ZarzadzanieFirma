@@ -11,7 +11,13 @@ namespace Pracownicy.Finanse
         public uint ID; //0
         string imie; //""
         protected string nazwisko;
-        
+        #region konstruktory
+        public Osoba(string imie, string nazwisko) //konstruktor z parametrami
+        {
+            this.Imie = imie;
+            this.nazwisko = nazwisko;
+        }
+        #endregion
         #region wlasciwosci
         public string Imie
         {
@@ -50,6 +56,7 @@ namespace Pracownicy.Finanse
             }
         }
         #endregion
+
     }
 
     public class Pracownik : Osoba
