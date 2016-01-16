@@ -26,6 +26,24 @@ namespace Pracownicy.Finanse
         public Wynagrodzenie wynagrodzenie; //null
         public Operacja[] operacje = new Operacja[20]; //Zamienić na kolekcję
         #endregion
+        #region konstruktory
+        public Pracownik() //konstruktor domyslny
+        {
+
+        }
+        public Pracownik(string imie, string nazwisko) //konstruktor z parametrami
+        {
+            this.Imie = imie;
+            this.nazwisko = nazwisko;
+        }
+
+        public Pracownik(string imie, string nazwisko, DateTime dataUrodzenia) : this (imie, nazwisko)
+            //konstruktor z 3 parametrami wykorzystujacy konstruktor z 2 parametrami
+        {
+            this.dataUrodzenia = dataUrodzenia;
+        }
+
+        #endregion
         #region wlasciwosci
         public string Imie
         {
