@@ -40,10 +40,9 @@ namespace ZarzadzaniePracownikami
             p1.operacje[0] = o1;
             p1.operacje[1] = o2;
 
-            var p2 = new Pracownik()
+            var p2 = new Pracownik("jan","Lis",new DateTime(1939,9,1))
             {
                 ID = 2222,
-                Imie = "jan",
                 umowa = UmowaTyp.Dzieło,
                 wynagrodzenie = new Wynagrodzenie()
                 {
