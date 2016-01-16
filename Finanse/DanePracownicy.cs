@@ -81,10 +81,9 @@ namespace Pracownicy.Finanse
         {
 
         }
-        public Pracownik(string imie, string nazwisko) //konstruktor z parametrami
+        public Pracownik(string imie, string nazwisko) : base (imie,nazwisko)
         {
-            this.Imie = imie;
-            this.nazwisko = nazwisko;
+           
         }
 
         public Pracownik(string imie, string nazwisko, DateTime dataUrodzenia) : this (imie, nazwisko)
